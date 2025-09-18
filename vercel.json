@@ -1,12 +1,4 @@
 {
-  "functions": {
-    "api/contact.js": {
-      "runtime": "@vercel/node"
-    },
-    "api/jobs.js": {
-      "runtime": "@vercel/node"
-    }
-  },
   "redirects": [
     {
       "source": "/index.html",
