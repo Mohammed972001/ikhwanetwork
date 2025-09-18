@@ -1,0 +1,739 @@
+/* Import Font: Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* Start Body */
+body {
+    direction: ltr !important;
+    text-align: left !important;
+    font-family: "Raleway", sans-serif !important;
+}
+
+/* End/* Start H/* Prevent horizontal overflow */
+body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Start Header */
+/* Apply header styles from main.css for Arabic version */
+@media (min-width: 992px) {
+    .header {
+        background-color: transparent !important;
+        padding: 50px 120px 0px 120px;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+.header .mobile-menu .main-nav > li > a {
+    color: white !important;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 15px;
+}
+
+@media (min-width: 992px) {
+    .header .mobile-menu .main-nav > li > a::before {
+        left: 0;
+        right: auto;
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 0 !important;
+        min-height: 80px !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        z-index: 10000 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: all !important;
+        transition: none !important;
+    }
+    .header .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 15px 20px !important;
+        height: 80px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
+    }
+    
+    .header .btn-show-nav {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        background: none;
+        border: none;
+        color: var(--Dark) !important;
+        font-size: 20px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .header .logo {
+        position: absolute !important;
+        left: 45% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 1 !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .header .logo img {
+        height: 50px;
+        width: auto;
+    }
+    
+    .header .mobile-menu {
+        position: fixed;
+        width: 85%;
+        max-width: 350px;
+        top: 80px;
+        left: 20px;
+        right: auto;
+        flex-direction: column;
+        align-items: start;
+        background-color: var(--White);
+        padding: 20px;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        margin-top: 0;
+    }
+
+    .header .mobile-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header .mobile-menu .main-nav {
+        margin: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        background-color: transparent;
+    }
+
+    .header .mobile-menu .main-nav li {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .header .mobile-menu .main-nav > li > a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--Dark) !important;
+        text-decoration: none;
+        border-left: 4px solid transparent;
+        border-right: none;
+        transition: all 0.3s ease;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 8px;
+    } 
+
+    .header .mobile-menu .main-nav > li > a:hover {
+        background-color: rgba(76, 175, 80, 0.1);
+        border-left-color: var(--Primary);
+        border-right-color: transparent;
+    }
+
+    .header .mobile-menu .main-nav > li > a.active {
+        border-left-color: var(--Primary);
+        border-right-color: transparent;
+        background-color: rgba(76, 175, 80, 0.1);
+        color: var(--Primary) !important;
+    }
+
+    .header .mobile-menu .main-nav > li > a {
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .header .mobile-menu .main-nav > li > a img {
+        width: 20px;
+        height: 15px;
+        object-fit: cover;
+        margin: 0 !important;
+        flex-shrink: 0;
+    }
+
+    /* إضافة مسافة للمحتوى لمنع التداخل مع الهيدر الثابت */
+    body {
+        padding-top: 80px;
+    }
+
+    .hero {
+        margin-top: 0 !important;
+        padding-top: 40px !important;
+    }
+}
+
+.footer-column:nth-child(2) {
+    flex: 0 0 450px;
+}
+/* End Header */
+
+/* Start Footer */
+footer .footer-column ul li a::before {
+    left: 0;
+    right: auto;
+}
+
+footer .social-links li a i {
+    margin-right: 15px;
+    margin-left: auto;
+}
+/* End Footer */
+
+/* 
+==============================================
+================= Index.html =================
+==============================================
+*/
+/* Start Hero */
+.hero {
+    background-image: url("../image/hero.svg");
+    transform: scaleX(-1);
+    padding-top: 90px;
+}
+
+.hero .container {
+    transform: scaleX(-1);
+}
+
+.hero .container h1 {
+    color: white !important;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero .container p {
+    color: white !important;
+}
+
+/* Hero responsive overrides for LTR */
+@media (max-width: 991px) {
+    .hero {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+      .hero .container h1 {
+        font-size: 24px;
+    }
+    .hero .container p {
+        max-width: 100%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+/* End Hero */
+
+/* Start about */
+/* Apply new about section styles for LTR */
+.about-company-content {
+    max-width: 900px;
+    padding: 50px 30px 0px 270px; /* Reverse padding for LTR */
+    gap: 25px;
+}
+
+.about-company-content .section-title {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; 
+} 
+
+.about-company-content .section-description {
+  font-family: Lato, sans-serif;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+}
+
+.about-company-grid .about-company-content .about-company-stats .stat-item {
+    align-items: flex-start;
+}
+
+/* Apply new about section image dimensions for LTR */
+.about-company-grid .about-company-image:first-child img {
+    width: 510px;
+    height: 466px;
+}
+
+.about-company-grid .about-company-image:last-child img {
+    top: 40px;
+    width: 260px;
+    height: 333px;
+    scale: 110%;
+}
+.about-company-grid .about-company-content .about-company-stats .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+}
+
+.about-company-grid .about-company-content .about-company-stats .stat-item .stat-number {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--Primary);
+    font-family: "Montserrat", sans-serif;
+}
+
+.about-company-grid .about-company-content .about-company-stats .stat-item .stat-label {
+    font-size: 16px;
+}
+/* Override for LTR - adjust image positions */
+@media (min-width: 1200px) {
+    .about-company-grid .about-company-image:first-child img {
+        left: 0;
+        right: auto;
+    }
+
+    .about-company-grid .about-company-image:last-child img {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-company-grid .about-company-image:last-child img {
+        right: 0;
+        left: auto;
+    }
+}
+@media (max-width: 768px) {
+    /* LTR: Image on left, stats on right */
+    .mobile-stats-container {
+        flex-direction: row-reverse;
+    }
+
+    /* Mobile Content alignment for LTR */
+    .mobile-content .section-title {
+        text-align: start;
+    }
+
+    .mobile-content .section-description {
+        text-align: start;
+    }
+
+    /* Stats on the right for English */
+    .mobile-stats {
+        text-align: left;
+    }
+
+    .mobile-stats .stat-item {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    /* Mobile Small Image for LTR */
+    .mobile-small-image {
+        width: 100px;
+    }
+
+    .mobile-small-image img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        scale: 110%;
+    }
+
+    /* Mobile Large Image for LTR */
+    .mobile-large-image img {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+}
+/* End about */
+
+/* Start CEO Message Section for LTR */
+.ceo-message-section .ceo-container {
+    flex-direction: row-reverse; /* Image on left, text on right for LTR */
+}
+
+.ceo-message-section p {
+    text-align: left;
+}
+
+.board-message-section img {
+    left: 0;
+    right: auto;
+}
+
+/* CEO Section Responsive for LTR */
+@media (max-width: 768px) {
+    .ceo-message-section .ceo-container {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
+    
+    .ceo-message-section .ceo-image {
+        order: -1; /* Image first on mobile for LTR too */
+    }
+    
+    
+    
+    .ceo-message-section .section-title {
+        text-align: center;
+    }
+    
+    
+    .board-message-section img {
+        left: 0;
+        right: auto;
+    }
+     .ceo-message-section p {
+        text-align: left;
+        font-size: 15px;
+    }
+}
+/* End CEO Message Section for LTR */
+
+/* Start Board Message Section for LTR */
+.board-message-section {
+    background-image: url("../image/ceo/board.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 1200px;
+    height: 410px;
+    margin: 0 auto;
+    padding: 65px 0px 65px 390px; /* إعكاس padding للنسخة الإنجليزية */
+    position: relative;
+    margin-top: 40px;
+}
+
+.board-message-section img {
+    position: absolute;
+    left: 60px; /* إبعاد الصورة عن الحافة اليسرى */
+    right: auto;
+    top: 70px;
+    z-index: 2;
+}
+
+.board-message-section .section-title,
+.board-message-section .section-description {
+    color: var(--White);
+    text-align: left; /* محاذاة النص إلى اليسار */
+}
+
+/* Media Queries for Board Message Section */
+/* 768px */
+@media (max-width: 768px) {
+    .board-message-section {
+        padding: 40px 16px 260px 16px;
+        height: auto;
+        min-height: 480px;
+    }
+
+    .board-message-section img {
+        left: -5px;
+        right: auto;
+        top: unset;
+        bottom: -120px;
+        max-width: 280px;
+        height: auto;
+    }
+
+    .board-message-section .section-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .board-message-section .section-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* 480px and smaller */
+@media (max-width: 480px) {
+    .board-message-section {
+        padding: 30px 12px 220px 12px;
+        min-height: 450px;
+    }
+
+    .board-message-section img {
+        left: -10px;
+        bottom: -100px;
+        max-width: 240px;
+    }
+
+    .board-message-section .section-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .board-message-section .section-description {
+        font-size: 13px;
+    }
+}
+
+/* Tablet Portrait (768px to 991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .board-message-section {
+        padding: 50px 30px 200px 320px;
+        height: 450px;
+    }
+
+    .board-message-section img {
+        left: 30px;
+        top: 80px;
+        max-width: 260px;
+    }
+
+    .board-message-section .section-title {
+        font-size: 20px;
+    }
+
+    .board-message-section .section-description {
+        font-size: 16px;
+    }
+}
+
+/* Large Tablet and Small Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .board-message-section {
+        padding: 60px 80px 60px 350px;
+    }
+
+    .board-message-section img {
+        left: 40px;
+    }
+}
+/* End Board Message Section for LTR */
+
+/* Start Company Strategy Section */
+.company-strategy-section .strategy-image {
+    right: 0;
+    left: auto;
+}
+
+.company-strategy-section .strategy-image::after {
+    left: auto;
+    right: 0;
+}
+
+.company-strategy-section .strategy-image::before {
+    left: -55px;
+    right: auto;
+}
+@media (max-width: 768px) {
+    .company-strategy-section .strategy-image::after {
+        left: 0;
+        right: auto;
+    }
+}
+@media (min-width: 991px) and (max-width: 1200px) {
+    .company-strategy-section .strategy-image img {
+        width: 70%;
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+/* End Company Strategy Section */
+
+/* Start Services Section */
+.our-services-section .services-header .services-navigation {
+    flex-direction: row-reverse;
+}
+/* End Services Section */
+
+/* StartFeatures Section */
+.features-section .features-navigation {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.features-section .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Desktop only - إزالة المساحة من اليمين في الدسكتوب فقط للنسخة الإنجليزية */
+@media (min-width: 992px) {
+    .features-section .features-swiper {
+        margin-right: -100px;
+    }
+}
+
+.features-section .features-swiper .feature-card {
+    height: 350px;
+}
+/* End Features Section */
+
+/* Partners Section */
+.partners-section .container {
+    flex-direction: row-reverse;
+}
+
+.partners-content {
+    max-width: 600px;
+}
+
+.partners-section .container {
+    flex-direction: row-reverse;
+}
+.partners-section .image img {width: 40%;}
+
+@media (max-width: 1200px) {
+    .partners-section .partners-content {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 991px) {
+    .partners-section .container {
+        flex-direction: column;
+    }
+    .partners-section .partners-content {
+        max-width: 100%;
+        order: -1;
+    }
+    .partners-section .image img {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+/* Partners Section */
+
+/* Start faq Section */
+@media (max-width: 768px) {
+    .faq-section {
+        min-height: 750px;
+    }
+
+    .faq-section::before {
+        top: 40%;
+        height: 943px;
+    }
+}
+/* End faq Section */
+
+/* Start Contact */
+.contact-section .contact-content {
+    direction: rtl;
+}
+
+.contact-section .contact-content .contact-form {
+    direction: ltr;
+}
+
+.contact-section .contact-content .contact-form .contact-options {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contact-section .contact-content .contact-form .contact-options .form-check {
+    padding: 0;
+}
+.contact-section .contact-content .contact-info p {
+    direction: ltr;
+}
+
+
+
+.contact-section .contact-info .info-item .info-label::before {
+    right: auto;
+    left: 0;
+}
+@media (max-width: 991px) {
+    .contact-section .contact-content .contact-info {
+        align-self: flex-end;
+    }
+}
+/* End Contact */
+
+/* Start FAQ */
+.faq-section .container .faq-content .faq-item .faq-question h4 {
+    font-size: 20px;
+}
+/* End FAQ */
+
+
+/* Header text color for Jobs and Partners pages in LTR */
+@media (min-width: 992px) {
+    /* صفحات الوظائف والشركاء - جعل لون النص أسود في الدسكتوب */
+    body.jobs-page .header .mobile-menu .main-nav > li > a,
+    body.partners-page .header .mobile-menu .main-nav > li > a {
+        color: var(--Text) !important; /* أسود بدلاً من الأبيض */
+    }
+    
+    body.jobs-page .header .lang-dropdown .lang-btn,
+    body.partners-page .header .lang-dropdown .lang-btn {
+        color: var(--Text) !important;
+    }
+    
+    body.jobs-page .header .lang-dropdown .lang-btn i,
+    body.partners-page .header .lang-dropdown .lang-btn i {
+        color: var(--Text) !important;
+    }
+}
+
+/* 
+==============================================
+================= Partners.html =================
+==============================================
+*/
+.company-slider-section .swiper-slide {
+    min-height: 700px;
+}
+@media (max-width: 768px) {
+    .swiper-pagination.swiper-pagination-horizontal {
+        bottom: 230px;
+    }
+}
+
+

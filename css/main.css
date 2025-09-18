@@ -1,0 +1,697 @@
+/*
+Author: Zaki Abed
+Project Name: IKHWA DIGITAL
+
+------------------------------------------------
+Table of Content
+------------------------------------------------
+
+1. General Styles
+2. Header Styles
+3. Footer Styles
+*/
+
+
+/* ------------------------------ */
+/* 1. Global layout and resets */
+/* ------------------------------ */
+/* Font: SomarSans */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+/* Global Reset */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+:root {
+    --Primary: rgba(16, 157, 70, 1);
+    --White: rgba(255, 255, 255, 1);
+    --Text: rgba(27, 31, 18, 1);
+    --Paragraph: rgba(84, 84, 84, 1);
+    --Stroke: rgba(182, 185, 193, 1);
+    --Footer: rgba(23, 23, 23, 1);
+    --Input_Text: rgba(115, 119, 129, 1);
+    --Stroke2: rgba(217, 219, 233, 1);
+    --Font: "IBM Plex Sans Arabic", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--Font);
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--Text);
+}
+
+p {
+    color: var(--Paragraph);
+}
+
+button, a {
+    outline: none;
+}
+
+button:focus, a:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+body::-webkit-scrollbar {
+	width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	background: var(--Primary);
+}
+
+/* Component Styles */
+.section-title {
+    margin-bottom: 24px;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 150%; 
+}
+
+.section-description {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 150%; 
+}
+
+/* ------------------------------ */
+/* 2. Header Styles */
+/* ------------------------------ */
+.header {
+    min-height: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: transparent !important;
+    padding: 50px 200px 0px 200px;
+}
+
+.header.scrolled {
+    /* This class is no longer used - header visibility controlled by JS */
+    background-color: white;
+    min-height: 60px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu.active {
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 9998;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 90px;
+    
+}
+
+.header .mobile-menu {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    z-index: 9998;
+}
+
+.header .mobile-menu .main-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+
+
+/* Language dropdown styles moved to index.css for better functionality */
+
+.header .mobile-menu .main-nav > li > a {
+    display: flex;
+    align-items: center;
+    color: white !important;
+    font-weight: 400;
+    height: 50px;
+    margin: 0 20px;
+    position: relative;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-size: 20px;
+}
+
+.header .btn-show-nav {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white !important;
+}
+
+.header .btn-show-nav:hover {
+    opacity: 0.5;
+}
+
+/* 
+==========================
+==== Start Language Dropdown =====
+==========================
+*/
+.lang-dropdown {
+    position: relative;
+    margin-left: 20px;
+    z-index: 9999;
+    position: relative;
+}
+
+.lang-btn {
+    background: linear-gradient(135deg, var(--Primary), #1e40af);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.lang-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.lang-btn:hover::before {
+    left: 100%;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lang-btn i {
+    font-size: 16px;
+}
+
+.lang-arrow {
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+.lang-dropdown.active .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    margin-top: 10px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.lang-dropdown.active .lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    z-index: 10000;
+}
+
+.lang-menu li {
+    list-style: none;
+    margin: 0;
+}
+
+.lang-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--Text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 2px 8px;
+    position: relative;
+    z-index: 10000;
+}
+
+.lang-menu li a:hover {
+    background: linear-gradient(135deg, var(--Primary), #1e40af);
+    color: white;
+    transform: translateX(5px);
+    z-index: 10000;
+}
+
+.lang-menu li a i {
+    font-size: 14px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 10000;
+}
+
+/* Media Queries for Language Dropdown */
+@media (max-width: 768px) {
+    .lang-dropdown {
+        margin-left: 15px;
+    }
+    
+    .lang-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+    
+    .lang-menu {
+        min-width: 160px;
+        right: -10px;
+    }
+    
+    .lang-menu li a {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+/* 
+==========================
+==== End Language Dropdown =====
+==========================
+*/
+/* ---------------------- */
+/* Media Queries Combined */
+/* ---------------------- */
+@media (min-width: 992px) {
+    .header .mobile-menu .main-nav > li > a:hover::before,
+    .header .mobile-menu .main-nav > li > a.active::before {
+        width: 100%;
+    }
+
+    .header .mobile-menu .main-nav > li > a::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        height: 2px;
+        width: 0;
+        background: var(--Primary);
+        transition: all 0.3s ease;
+    }
+
+    .header .mobile-menu .main-nav > li > a.active {
+        position: relative;
+    }
+
+    .header .mobile-menu .main-nav > li > a.active::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        height: 2px;
+        width: 100%;
+        background: var(--Primary);
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .header .mobile-menu .main-nav > li > a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 0;
+        min-height: 80px;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+    }
+
+    .header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        height: 80px;
+        width: 100%;
+        position: relative;
+    }
+
+    .header .btn-show-nav {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        background: none;
+        border: none;
+        color: var(--Dark) !important;
+        font-size: 20px;
+        cursor: pointer;
+        flex-shrink: 0;
+        order: 1;
+    }
+
+    .header .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .header .logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .header .mobile-menu {
+        position: fixed;
+        width: 85%;
+        max-width: 350px;
+        top: 80px;
+        right: 20px;
+        left: auto;
+        flex-direction: column;
+        align-items: start;
+        background-color: var(--White);
+        padding: 20px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        margin-top: 0;
+    }
+
+    .header .mobile-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header .mobile-menu .main-nav {
+        margin: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        background-color: transparent;
+    }
+
+    .header .mobile-menu .main-nav li {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .header .mobile-menu .main-nav > li > a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--Dark) !important;
+        text-decoration: none;
+        border-right: 4px solid transparent;
+        transition: all 0.3s ease;
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 8px;
+    }
+
+    .header .mobile-menu .main-nav > li > a:hover {
+        background-color: rgba(76, 175, 80, 0.1);
+        border-right-color: var(--Primary);
+    }
+
+    .header .mobile-menu .main-nav > li > a.active {
+        border-right-color: var(--Primary);
+        background-color: rgba(76, 175, 80, 0.1);
+        color: var(--Primary) !important;
+    }
+
+    .header .mobile-menu .main-nav > li > a {
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .header .mobile-menu .main-nav > li > a img {
+        width: 20px;
+        height: 15px;
+        object-fit: cover;
+        margin: 0 !important;
+        flex-shrink: 0;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+
+    .hero {
+        margin-top: 0 !important;
+        padding-top: 40px !important;
+    }
+}
+
+/* ------------------------------ */
+/* 6. Footer */
+/* ------------------------------ */
+footer {
+    padding: 40px 0;
+    background-color: var(--Footer);
+    position: relative
+}
+
+footer .btn-top {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--Primary);
+    border: 8px solid rgba(48, 48, 48, 1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 0 1 200px; 
+}
+.footer-column:nth-child(1) {
+    flex: 0 0 100px; 
+}
+.footer-column:nth-child(2) {
+    flex: 0 0 300px; 
+}
+footer .footer-column p {
+    color: var(--White);
+}
+
+footer .footer-column h3 {
+    font-size: 21px;
+    margin-bottom: 30px;
+    color: var(--White);
+}
+
+footer .footer-column ul li {
+    margin: 15px 0;
+}
+
+footer .footer-column ul li a {
+    color: var(--White);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+footer .footer-column ul li a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: var(--White);
+    transition: all 0.3s ease;
+}
+
+footer .footer-column ul li a:hover::before {
+    width: 100%;
+}
+
+footer .social-links li a i {
+    margin-left: 10px;
+}
+
+.copy-right {
+    background-color: #1D1D1D;
+    padding: 24px 0;
+}
+
+.copy-right .footer-bottom {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.copy-right  .footer-bottom a,
+.copy-right  .footer-bottom p {
+    color: var(--White);
+}
+
+.copy-right  .footer-bottom p {
+    margin: 0;
+}
+
+.copy-right  .footer-bottom a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.copy-right  .footer-bottom a i {
+    background: var(--Primary);
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+    .footer-column:nth-child(2) {
+        flex: 50%;
+    }
+    footer .container {
+         flex-wrap: wrap;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        flex: 1 1 100% !important;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}

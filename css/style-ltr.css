@@ -1,0 +1,93 @@
+/*
+Author: Zaki Abed
+Project Name: Modalst
+
+------------------------------------------------
+Table of Content
+------------------------------------------------
+
+1. General Styles
+2. Header Styles
+3. Hero Style
+5. Contact Us Styles
+6. Footer
+*/
+
+/* ------------------------------ */
+/* 1. General Styles */
+/* ------------------------------ */
+body {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* ------------------------------ */
+/* 2. Header Styles */
+/* ------------------------------ */
+
+.header .btn-show-nav {
+    right: 25px;
+    left: auto;
+}
+
+@media (max-width: 991px) {
+    .header .mobile-menu .main-nav > li > a {
+        border-left: 6px solid transparent;
+        padding-left: 23px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .btn-primary {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+/* ------------------------------ */
+/* 3. Hero Styles */
+/* ------------------------------ */
+
+html[lang=en] .hero .hero-images {
+    direction: rtl;
+}
+
+/* ------------------------------ */
+/* 4. Contact Us Styles */
+/* ------------------------------ */
+.contact-form .row div {
+    text-align: left;
+}
+
+.contact-form label{
+    text-align: left;
+}
+
+/* ------------------------------ */
+/* 5. Contact Us Styles */
+/* ------------------------------ */
+footer .footer-column {
+    text-align: left;
+}
+
+footer .social-links li a i {
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+footer .app-buttons .btn {
+    font-size: 13.5px;
+}
+
+footer .footer-column:first-child {
+    text-align: left !important;
+}
+
+footer .footer-column p {
+    padding-right: 0
+}
+
+footer .footer-column p i {
+    margin-left: 0;
+    margin-right: 7px;
+}

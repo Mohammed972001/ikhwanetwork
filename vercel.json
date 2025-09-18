@@ -1,0 +1,47 @@
+{
+  "functions": {
+    "api/contact.js": {
+      "runtime": "@vercel/node"
+    },
+    "api/jobs.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/contact-proxy.php",
+      "destination": "/api/contact"
+    },
+    {
+      "source": "/job-form-handler.php", 
+      "destination": "/api/jobs"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options", 
+          "value": "DENY"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ikhwanetwork-website",
+  "version": "1.0.0",
+  "description": "Ikhwa Network Real Estate Company Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8080 -c-1 -o",
+    "build": "echo 'No build step required for static site'",
+    "start": "npx http-server -p 8080"
+  },
+  "keywords": [
+    "real-estate",
+    "morocco",
+    "ikhwa-network",
+    "property",
+    "investment"
+  ],
+  "author": "Ikhwa Network",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
