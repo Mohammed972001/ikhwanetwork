@@ -468,7 +468,7 @@ font-weight: 400;
     max-width: 1200px;
     height: 410px;
     margin: 0 auto;
-    padding: 65px 390px 65px 105px; /* زيادة padding-right لإبعاد النص عن الصورة */
+    padding: 65px 390px 65px 105px; 
     position: relative;
     margin-top: 40px;
 }
@@ -476,7 +476,7 @@ font-weight: 400;
 
 .board-message-section img {
     position: absolute;
-    right: 60px; /* إبعاد الصورة قليلاً عن الحافة */
+    right: 60px;
     top: 70px;
     z-index: 2;
 }
@@ -595,6 +595,7 @@ font-weight: 400;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    padding-left: 30px;
 }
 
 .company-strategy-section .strategy-image::before,
@@ -621,7 +622,7 @@ font-weight: 400;
 }
 
 .company-strategy-section .strategy-text {
-    max-width: 550px;
+    max-width: 700px;
 }
 
 .company-strategy-section .strategy-text .strategy-principles-grid {
@@ -728,7 +729,6 @@ font-weight: 400;
     max-width: 800px;
 }
 
-/* Desktop only - إزالة المساحة من الشمال في الدسكتوب فقط */
 @media (min-width: 992px) {
     .features-section .features-swiper {
         margin-left: -100px; 
@@ -860,11 +860,16 @@ font-weight: 400;
 }
 
 .our-services-section .service-card.card2 {
-    background-color: var(--Primary);
+   background-image: url("../image/services/h1_img-2 2 (1).svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 .our-services-section .service-card.card3 {
-    background-color: var(--Text);
+    background-image: url("../image/services/h1_img-2 2.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .our-services-section .service-card.card4{
@@ -885,6 +890,7 @@ font-weight: 400;
 ================================
 */
 .partners-section {
+    width: 100%;
     padding: 80px 0;
     margin: 60px 0;
     position: relative;
@@ -895,17 +901,20 @@ font-weight: 400;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+    width: 100%;
+    
+    gap: 20px;}
 
 .partners-section .image {
-    width: 100%;
+    width: 60%;
     height: 100%;
 }
 
 .partners-section .partners-logos {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
     place-items: center;
 }
 

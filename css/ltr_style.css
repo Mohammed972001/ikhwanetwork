@@ -40,6 +40,22 @@ html {
         visibility: visible;
         pointer-events: all;
     }
+    
+    /* English Page Specific Header Padding & Spacing */
+    body.en-page .header {
+        padding: 52px 125px 0px 100px !important;
+    }
+    
+    body.en-page .header .mobile-menu .main-nav {
+        gap: 8px !important;
+    }
+    
+   
+    
+    body.en-page .header .mobile-menu .main-nav > li > a:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        transform: translateY(-2px) !important;
+    }
 }
 
 .header .mobile-menu .main-nav > li > a {
@@ -50,10 +66,91 @@ html {
     margin: 0 15px;
 }
 
+/* English Page Specific Header Styles */
+body.en-page .header .mobile-menu .main-nav > li > a {
+    color: white !important;
+    font-family: "Raleway", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+}
+/* English Page Mobile Specific Styles */
+@media (max-width: 991px) {
+    body.en-page .header .mobile-menu .main-nav > li > a {
+        color: var(--Dark) !important;
+    }
+}
+
 @media (min-width: 992px) {
     .header .mobile-menu .main-nav > li > a::before {
         left: 0;
         right: auto;
+    }
+    
+    /* Logo Transform for LTR pages (desktop) */
+    .header .logo img {
+        transform: scaleX(1.08) scaleY(1.15);
+    }
+    
+    /* Desktop Logo Switching for LTR */
+    .header .logo .logo-desktop {
+        display: block;
+    }
+    
+    .header .logo .logo-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .header {
+        padding: 47px 100px 0px 100px !important;
+    }
+    
+    .header .mobile-menu .main-nav > li > a {
+        font-size: 19px !important;
+        margin: 0 16px !important;
+    }
+    
+    .header .logo img {
+        height: 82px !important;
+        transform: scaleX(1.08) scaleY(1.15) !important;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .header {
+        padding: 47px 60px 0px 60px !important;
+    }
+    
+    .header .mobile-menu .main-nav > li > a {
+        font-size: 18px !important;
+        margin: 0 13px !important;
+    }
+    
+    .header .logo img {
+        height: 78px !important;
+        transform: scaleX(1.08) scaleY(1.15) !important;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+    .header {
+        padding: 40px 40px 0px 40px !important;
+    }
+    
+    .header .mobile-menu .main-nav > li > a {
+        font-size: 16px !important;
+        margin: 0 10px !important;
+    }
+    
+    .header .logo img {
+        height: 72px !important;
+        transform: scaleX(1.08) scaleY(1.15) !important;
+    }
+    
+    .header .container {
+        gap: 35px !important;
     }
 }
 @media (max-width: 991px) {
@@ -115,6 +212,15 @@ html {
     .header .logo img {
         height: 50px;
         width: auto;
+        transform: scaleX(1.15) scaleY(1.20);
+    }
+    
+    .header .logo .logo-desktop {
+        display: none;
+    }
+    
+    .header .logo .logo-mobile {
+        display: block;
     }
     
     .header .mobile-menu {
@@ -197,7 +303,6 @@ html {
         flex-shrink: 0;
     }
 
-    /* إضافة مسافة للمحتوى لمنع التداخل مع الهيدر الثابت */
     body {
         padding-top: 80px;
     }
@@ -239,16 +344,25 @@ footer .social-links li a i {
 
 .hero .container {
     transform: scaleX(-1);
+    padding-left: 95px; 
+    padding-bottom: 20px;
+    font-family: "lato", sans-serif !important;
+    
 }
 
 .hero .container h1 {
     color: white !important;
-    font-size: 48px;
+    font-size: 41px;
     font-weight: 700;
+    line-height: 160% !important;
 }
 
 .hero .container p {
     color: white !important;
+     font-size: 29px!important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+   
 }
 
 /* Hero responsive overrides for LTR */
@@ -449,14 +563,14 @@ line-height: 150%;
     max-width: 1200px;
     height: 410px;
     margin: 0 auto;
-    padding: 65px 0px 65px 390px; /* إعكاس padding للنسخة الإنجليزية */
+    padding: 65px 0px 65px 390px; 
     position: relative;
     margin-top: 40px;
 }
 
 .board-message-section img {
     position: absolute;
-    left: 60px; /* إبعاد الصورة عن الحافة اليسرى */
+    left: 60px; 
     right: auto;
     top: 70px;
     z-index: 2;
@@ -465,7 +579,7 @@ line-height: 150%;
 .board-message-section .section-title,
 .board-message-section .section-description {
     color: var(--White);
-    text-align: left; /* محاذاة النص إلى اليسار */
+    text-align: left; 
 }
 
 /* Media Queries for Board Message Section */
@@ -553,12 +667,49 @@ line-height: 150%;
     }
 }
 /* End Board Message Section for LTR */
-
 /* Start Company Strategy Section */
+.company-strategy-section {
+    padding-left: 60px;
+}
+
+.company-strategy-section .strategy-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+}
+
+.company-strategy-section .strategy-text{
+    flex: 1;
+    max-width:700px;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+.company-strategy-section .strategy-text .section-description p{
+    color: var(--Paragraph, #545454);
+    font-family: "lato", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+  
 .company-strategy-section .strategy-image {
+    position: absolute;
+    top: 50%;
     right: 0;
     left: auto;
+    flex-shrink: 0;
+    padding-right: 60px;
 }
+
+.company-strategy-section .strategy-image img {
+    width: 180%;
+    height: auto;
+    max-width: 550px;
+}
+
 
 .company-strategy-section .strategy-image::after {
     left: auto;
@@ -575,11 +726,92 @@ line-height: 150%;
         right: auto;
     }
 }
-@media (min-width: 991px) and (max-width: 1200px) {
+/* Company Strategy Responsive Design for LTR */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .company-strategy-section {
+        padding-left: 50px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 550px;
+        padding-left: 50px;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 50px;
+    }
+    
     .company-strategy-section .strategy-image img {
-        width: 70%;
-        margin-right: 0;
-        margin-left: auto;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .company-strategy-section {
+        padding-left: 40px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 500px;
+        padding-left: 40px;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 40px;
+    }
+    
+    .company-strategy-section .strategy-image img {
+        width: 110%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+    .company-strategy-section {
+        padding-left: 30px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 450px;
+        padding-left: 30px;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 30px;
+    }
+    
+    .company-strategy-section .strategy-image img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .company-strategy-section {
+        padding-left: 20px;
+    }
+    
+    .company-strategy-section .strategy-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 0;
+    }
+    
+    .company-strategy-section .strategy-image img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
     }
 }
 
@@ -589,12 +821,45 @@ line-height: 150%;
 .our-services-section .services-header .services-navigation {
     flex-direction: row-reverse;
 }
+.our-services-section .service-card.card1{
+    background-image: url("../image/services/card1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.our-services-section .service-card.card2 {
+   background-image: url("../image/services/h1_img-2 2 (1).svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.our-services-section .service-card.card3 {
+    background-image: url("../image/services/h1_img-2 2.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.our-services-section .service-card.card4{
+    background-image: url("../image/services/card4.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 /* End Services Section */
 
 /* StartFeatures Section */
 .features-section .features-navigation {
     flex-direction: row-reverse;
     justify-content: flex-end;
+    padding-left: 100px;
+}
+
+@media (max-width: 991px) {
+    .features-section .features-navigation {
+        padding-left: 20px;
+    }
 }
 
 .features-section .container {
@@ -602,10 +867,27 @@ line-height: 150%;
     padding-right: 0;
 }
 
-/* Desktop only - إزالة المساحة من اليمين في الدسكتوب فقط للنسخة الإنجليزية */
+.features-section .features-header {
+    padding-left: 100px;
+}
+
+@media (max-width: 991px) {
+    .features-section .features-header {
+        padding-left: 20px;
+    }
+}
+
+
 @media (min-width: 992px) {
     .features-section .features-swiper {
         margin-right: -100px;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 991px) {
+    .features-section .features-swiper {
+        margin-left: 20px;
     }
 }
 
@@ -705,10 +987,9 @@ line-height: 150%;
 
 /* Header text color for Jobs and Partners pages in LTR */
 @media (min-width: 992px) {
-    /* صفحات الوظائف والشركاء - جعل لون النص أسود في الدسكتوب */
     body.jobs-page .header .mobile-menu .main-nav > li > a,
     body.partners-page .header .mobile-menu .main-nav > li > a {
-        color: var(--Text) !important; /* أسود بدلاً من الأبيض */
+        color: var(--Text) !important; 
     }
     
     body.jobs-page .header .lang-dropdown .lang-btn,
