@@ -350,43 +350,25 @@ footer .social-links li a i {
     
 }
 
+/* Hero base styles for LTR */
 .hero .container h1 {
     color: white !important;
-    font-size: 41px;
+    font-size: 48px;
     font-weight: 700;
-    line-height: 160% !important;
+    line-height: 125%;
 }
 
 .hero .container p {
     color: white !important;
-     font-size: 29px!important;
-    font-weight: 500 !important;
-    line-height: 150% !important;
-   
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 40px;
 }
 
-/* Hero responsive overrides for LTR */
-@media (max-width: 991px) {
-    .hero {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-      .hero .container h1 {
-        font-size: 24px;
-    }
-    .hero .container p {
-        max-width: 100%;
-        font-size: 18px;
-    }
+.hero .container .wrapper {
+    max-width: 800px;
 }
-
-@media (max-width: 768px) {
-    .hero {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-}
-/* End Hero */
 
 /* Start about */
 /* Apply new about section styles for LTR */
@@ -727,32 +709,13 @@ line-height: 150%;
     }
 }
 /* Company Strategy Responsive Design for LTR */
-@media (max-width: 1400px) and (min-width: 1201px) {
+@media (max-width: 1500px) and (min-width: 1401px) {
     .company-strategy-section {
         padding-left: 50px;
     }
     
     .company-strategy-section .strategy-text {
-        max-width: 550px;
-        padding-left: 50px;
-    }
-    
-    .company-strategy-section .strategy-image {
-        padding-right: 50px;
-    }
-    
-    .company-strategy-section .strategy-image img {
-        max-width: 420px;
-    }
-}
-
-@media (max-width: 1200px) and (min-width: 1025px) {
-    .company-strategy-section {
-        padding-left: 40px;
-    }
-    
-    .company-strategy-section .strategy-text {
-        max-width: 500px;
+        max-width: 580px;
         padding-left: 40px;
     }
     
@@ -761,18 +724,17 @@ line-height: 150%;
     }
     
     .company-strategy-section .strategy-image img {
-        width: 110%;
-        max-width: 380px;
+        max-width: 450px;
     }
 }
 
-@media (max-width: 1024px) and (min-width: 992px) {
+@media (max-width: 1400px) and (min-width: 1201px) {
     .company-strategy-section {
-        padding-left: 30px;
+        padding-left: 40px;
     }
     
     .company-strategy-section .strategy-text {
-        max-width: 450px;
+        max-width: 520px;
         padding-left: 30px;
     }
     
@@ -781,19 +743,74 @@ line-height: 150%;
     }
     
     .company-strategy-section .strategy-image img {
+        max-width: 400px;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid .principle-card {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .company-strategy-section {
+        padding-left: 30px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 480px;
+        padding-left: 25px;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 25px;
+    }
+    
+    .company-strategy-section .strategy-image img {
         width: 100%;
         max-width: 350px;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid .principle-card {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 992px) {
+    .company-strategy-section {
+        padding-left: 25px;
+    }
+    
+    .company-strategy-section .strategy-text {
+        max-width: 420px;
+        padding-left: 20px;
+    }
+    
+    .company-strategy-section .strategy-image {
+        padding-right: 20px;
+    }
+    
+    .company-strategy-section .strategy-image img {
+        width: 90%;
+        max-width: 320px;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid .principle-card {
+        padding: 8px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 991px) {
     .company-strategy-section {
         padding-left: 20px;
+        padding-right: 20px;
     }
     
     .company-strategy-section .strategy-content {
         flex-direction: column;
-        gap: 40px;
+        gap: 75px;
     }
     
     .company-strategy-section .strategy-text {
@@ -801,21 +818,192 @@ line-height: 150%;
         padding-left: 0;
         padding-right: 0;
         text-align: left;
+        order: 1;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid .principle-card {
+        background: rgba(247, 247, 247, 1);
+        padding: 16px;
     }
     
     .company-strategy-section .strategy-image {
         padding-right: 0;
+        position: relative;
+        transform: none;
+        top: auto;
+        right: auto;
+        order: 2;
+        margin-top: 0;
     }
     
     .company-strategy-section .strategy-image img {
-        width: 100%;
-        max-width: 400px;
+        width: 80%;
         margin: 0 auto;
         display: block;
     }
 }
 
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .company-strategy-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .company-strategy-section .strategy-image img {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .company-strategy-section .strategy-text .strategy-principles-grid .principle-card {
+        padding: 16px;
+    }
+}
+
 /* End Company Strategy Section */
+
+/* Start Hero Section Responsive for LTR */
+/* Small Desktop (1200px - 1400px) */
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .hero .container h1 {
+        font-size: 42px !important;
+        line-height: 120% !important;
+    }
+    
+    .hero .container p {
+        font-size: 22px !important;
+        margin-top: 28px !important;
+        margin-bottom: 36px !important;
+    }
+    
+    .hero .container .wrapper {
+        max-width: 750px !important;
+    }
+}
+
+/* Tablet Large (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero {
+        padding-top: 80px !important;
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+    
+    .hero .container h1 {
+        font-size: 36px !important;
+        line-height: 125% !important;
+    }
+    
+    .hero .container p {
+        font-size: 20px !important;
+        margin-top: 24px !important;
+        margin-bottom: 32px !important;
+    }
+    
+    .hero .container .wrapper {
+        max-width: 700px !important;
+    }
+    
+    .hero .container a {
+        padding: 15px 22px !important;
+        font-size: 17px !important;
+    }
+}
+
+/* Tablet (769px - 991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .hero {
+        height: 80vh !important;
+        padding-top: 100px !important;
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+    
+    .hero .container h1 {
+        font-size: 32px !important;
+        line-height: 125% !important;
+    }
+    
+    .hero .container p {
+        font-size: 18px !important;
+        margin-top: 22px !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .hero .container .wrapper {
+        max-width: 600px !important;
+    }
+    
+    .hero .container a {
+        padding: 14px 20px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Mobile Large (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero {
+        height: 70vh !important;
+        padding-top: 120px !important;
+        padding-right: 25px !important;
+        padding-left: 25px !important;
+    }
+    
+    .hero .container h1 {
+        font-size: 26px !important;
+        line-height: 130% !important;
+    }
+    
+    .hero .container p {
+        font-size: 16px !important;
+        margin-top: 20px !important;
+        margin-bottom: 28px !important;
+    }
+    
+    .hero .container a {
+        padding: 14px 20px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh !important;
+        padding-top: 140px !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+    }
+    
+    .hero .container h1 {
+        font-size: 22px !important;
+        line-height: 130% !important;
+    }
+    
+    .hero .container p {
+        font-size: 14px !important;
+        margin-top: 18px !important;
+        margin-bottom: 26px !important;
+    }
+    
+    .hero .container a {
+        padding: 12px 18px !important;
+        font-size: 15px !important;
+    }
+}
+/* End Hero Section Responsive for LTR */
 
 /* Start Services Section */
 .our-services-section .services-header .services-navigation {
