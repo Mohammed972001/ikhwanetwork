@@ -439,6 +439,103 @@ line-height: 150%;
     }
 }
 
+/* Large Devices (between 1200px and 1400px) - LTR */
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .about-company-content {
+        max-width: 650px;
+        padding: 40px 0px 0px 220px;
+    }
+    
+    .about-company-grid .about-company-image:first-child img {
+        position: absolute;
+        left: 0;
+        right: auto;
+        width: 450px;
+        height: 400px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .about-company-grid .about-company-image:last-child img {
+        position: absolute;
+        right: 0;
+        left: auto;
+        width: 230px;
+        height: 320px;
+        top: 0;
+    }
+}
+
+/* Medium-Large Devices (between 980px and 1200px) - LTR */
+@media (min-width: 980px) and (max-width: 1199px) {
+    .about-company-content {
+        max-width: 600px;
+        padding: 35px 0px 0px 200px;
+    }
+    
+    .about-company-grid .about-company-image:first-child img {
+        position: absolute;
+        left: 0;
+        right: auto;
+        width: 400px;
+        height: 350px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .about-company-grid .about-company-image:last-child img {
+        position: absolute;
+        right: 0;
+        left: auto;
+        width: 200px;
+        height: 280px;
+        top: 5%;
+    }
+    
+    .about-company-content .section-title {
+        font-size: 28px;
+    }
+
+    .about-company-content .section-description {
+        font-size: 17px;
+    }
+
+    .about-company-grid .about-company-content .about-company-stats .stat-item .stat-number {
+        font-size: 32px;
+    }
+
+    .about-company-grid .about-company-content .about-company-stats .stat-item .stat-label {
+        font-size: 17px;
+    }
+}
+
+/* Medium Devices (between 900px and 980px) - LTR Adjusted Layout */
+@media (min-width: 900px) and (max-width: 980px) {
+    .about-company-content {
+        max-width: 550px;
+        padding: 35px 0px 0px 180px;
+    }
+    
+    .about-company-grid .about-company-image:first-child img {
+        position: absolute;
+        left: 0;
+        right: auto;
+        width: 350px;
+        height: 320px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .about-company-grid .about-company-image:last-child img {
+        position: absolute;
+        right: 0;
+        left: auto;
+        width: 180px;
+        height: 250px;
+        top: 8%;
+    }
+}
+
 @media (max-width: 1200px) {
     .about-company-grid .about-company-image:last-child img {
         right: 0;

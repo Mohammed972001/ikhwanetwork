@@ -2,10 +2,9 @@
     background-color: transparent;
 }
 
-/* Header text color for desktop - جعل لون النص أسود في الدسكتوب */
 @media (min-width: 992px) {
     body.partners-page .header .mobile-menu .main-nav > li > a {
-        color: var(--Text) !important; /* أسود بدلاً من الأبيض */
+        color: var(--Text) !important; 
     }
     
     body.partners-page .header .lang-dropdown .lang-btn {
