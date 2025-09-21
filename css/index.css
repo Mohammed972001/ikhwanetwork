@@ -843,8 +843,7 @@ font-weight: 400;
         gap: 75px;
     }
     .company-strategy-section .strategy-image {
-        position: relative;
-        transform: unset;
+        display: none !important;
     }
 
     .company-strategy-section .strategy-text {
@@ -1145,8 +1144,8 @@ font-weight: 400;
         flex-direction: column-reverse;
         gap: 50px;
     }
-    .partners-section .image img {
-        margin: 0 auto;
+    .partners-section .image {
+        display: none !important;
     }
 
     .partners-section .partners-logos {
@@ -1622,6 +1621,10 @@ font-weight: 400;
     border: 0;
     font-weight: 700;
 }
+ /* Features Section Mobile Padding */
+    .features-section .features-header {
+        padding: 0 20px;
+    }
 
 
 /* Media Query */

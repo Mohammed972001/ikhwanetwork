@@ -4,7 +4,9 @@
   "description": "Ikhwa Network Real Estate Company Website",
   "main": "index.html",
   "scripts": {
-    "dev": "npx http-server -p 8080 -c-1 -o",
+    "dev": "npx live-server --port=8080 --open=/index.html",
+    "dev-en": "npx live-server --port=8080 --open=/en/index.html",
+    "dev-fr": "npx live-server --port=8080 --open=/fr/index.html",
     "build": "echo 'No build step required for static site'",
     "start": "npx http-server -p 8080"
   },
@@ -18,6 +20,7 @@
   "author": "Ikhwa Network",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
   }
 }
