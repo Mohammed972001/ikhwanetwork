@@ -187,7 +187,7 @@
 		<div class="board-message-box">
 			<h2 class="section-title">مجلس إدارة الشركة: (إدارة نزيهة و تعامل مرن)</h2>
 			<p class="section-description">
-                يلتزم أعضاء مجلس إدارة شبكة إخوة بالمساهمة في تنفيذ الرؤية السامية لصاحب الجلالة الملك محمد السادس نصره الله وذلك بالمشاركة في تعزيز وتطوير الإقتصاد الوطني خاصة في مجال العقار كرافعة أساسية للتنمية، كما يلتزم بتوطيد أصوال التعامل مع زبنائنا وضمان حماية مشاريعهم كما يسهر على حماية أصول واستثمارات الشركة.
+                يلتزم أعضاء مجلس إدارة شبكة إخوة بالمساهمة في تنفيذ الرؤية السامية لصاحب الجلالة الملك محمد السادس نصره الله وذلك بالمشاركة في تعزيز وتطوير الإقتصاد الوطني خاصة في مجال العقار كرافعة أساسية للتنمية، كما يلتزم بتوطيد اواصر التعامل مع زبنائنا وضمان حماية مشاريعهم كما يسهر على حماية أصول واستثمارات الشركة.
             </p>
 		</div>
         <img data-src="image/ceo/Chair.svg" class="lazyload" alt="place">
@@ -214,7 +214,7 @@
                             <div class="icon">
                                 <img data-src="image/strategy/icon1.svg" class="lazyload" alt="icon1">
                             </div>
-                            <p>إدارة مالية دقيقة للمشاريع ومشاريع الذكاء</p>
+                            <p>إدارة مالية دقيقة للمشاريع </p>
                         </div>
                         <div class="principle-card">
                             <div class="icon">
@@ -237,7 +237,7 @@
                     </div>
                 </div>
                 <div class="strategy-image">
-                    <img data-src="image/strategy/STR.svg" class="lazyload" alt="مخطط بناء وعقارات">
+                    <img data-src="image/strategy/STR.png" class="lazyload" alt="مخطط بناء وعقارات">
                 </div>
             </div>
         </div>
@@ -249,7 +249,7 @@
         <div class="features-header">
             <h2 class="section-title">أهم ما يميزنا</h2>
             <p class="section-description">
-                في شبكة إخوة، نؤمن أن العقار فن والتزام، ولهذا نحرص على تقديم تجربة عقارية متكاملة تُلبي تطلعاتكم.
+                في شبكة إخوة، نؤمن أن العقار فن والتزام، ولهذا نحرص على تقديم حقيبة عقارية متكاملة تُلبي تطلعاتكم.
                 نضمن لكم الجودة والسكن المثالي بتكلفة ترضيكم، مدعومين برؤية واضحة وفريق يمتلك خبرات ميدانية راسخة.
                 خبرتنا تجعلنا روادًا في المجال، ونواصل الابتكار لنمنحكم قيمة استثمارية حقيقية تعزز من جودة الحياة
             </p>
@@ -477,58 +477,89 @@
         <div class="contact-content">
             <div class="contact-form">
                 <form id="contactForm">
+                    <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+                    <input type="hidden" name="from_site" value="ikhwanetwork.com/contact">
+
                     <div class="form-row">
                         <div class="mb-3">
-                        <label for="name" class="form-label">الاسم</label>
-                        <input type="text" class="form-control" id="name" placeholder="الاسم">
+                            <label for="name" class="form-label">الاسم</label>
+                            <input type="text" class="form-control" name="name" required placeholder="الاسم">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">البريد الإلكتروني</label>
-                            <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني">
+                            <input type="email" class="form-control" name="email" required placeholder="البريد الإلكتروني">
                         </div>
                     </div>
+
                     <div class="mb-3">
-                        <label for="phone" class="form-label">رقم الهاتف</label>
-                        <input type="text" class="form-control" id="phone" placeholder="رقم الهاتف">
+                        <label class="form-label">رقم الهاتف</label>
+                        <input type="text" class="form-control" name="phone" placeholder="رقم الهاتف">
                     </div>
-                    <div class="mb-3 file-upload">
-                        <label for="file" class="form-label">الملف</label>
-                        <div id="myDropzone" class="dropzone">
-                            <div class="dz-message" data-dz-message>
-                                <i class="fa-solid fa-file"></i>
-                                <span>يرجى إرفاق ملف لا يزيد حجمه عن 5 ميجابايت بأحد التنسيقات التالية: .jpg, .jpeg, .png, .pdf, .xlsx, .docx</span>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="mb-3">
-                        <label for="description" class="form-label">الوصف</label>
-                        <textarea class="form-control" id="description" rows="3" placeholder="الوصف"></textarea>
-                    </div>         
+                        <label class="form-label">الوصف</label>
+                        <textarea class="form-control" name="message" rows="3" placeholder="الوصف"></textarea>
+                    </div>
+
                     <div class="contact-options">
                         <div class="form-check">
                             <label class="form-check-label custom-radio" for="radio1">
-                                <input class="form-check-input" type="radio" id="radio1" name="1">
+                                <input class="form-check-input" type="radio" id="radio1" name="type" value="استفسار" checked>
                                 <span class="checkmark"></span>
                             </label>
                             <label for="radio1">استفسار</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label custom-radio" for="radio2">
-                                <input class="form-check-input" type="radio" id="radio2" name="1">
+                                <input class="form-check-input" type="radio" id="radio2" name="type" value="اقتراح">
                                 <span class="checkmark"></span>
                             </label>
                             <label for="radio2">اقتراح</label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label custom-radio" for="radio3">
-                                <input class="form-check-input" type="radio" id="radio3" name="1">
+                                <input class="form-check-input" type="radio" id="radio3" name="type" value="شكوى">
                                 <span class="checkmark"></span>
                             </label>
                             <label for="radio3">شكوى</label>
                         </div>
                     </div>
+
                     <button type="submit" class="submit-btn">إرسال</button>
+                    <p id="resultMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
                 </form>
+
+                <script>
+                document.getElementById("contactForm").addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    const result = document.getElementById("resultMsg");
+                    result.innerText = "جاري الإرسال...";
+                    result.style.color = "#007bff";
+
+                    const formData = new FormData(this);
+
+                    try {
+                        const res = await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            body: formData
+                        });
+
+                        const data = await res.json();
+
+                        if (data.success) {
+                            result.innerText = "✅ تم إرسال رسالتك بنجاح!";
+                            result.style.color = "#28a745";
+                            this.reset();
+                        } else {
+                            result.innerText = "❌ حدث خطأ، حاول مرة أخرى.";
+                            result.style.color = "#dc3545";
+                        }
+                    } catch (error) {
+                        result.innerText = "❌ حدث خطأ في الاتصال، حاول مرة أخرى.";
+                        result.style.color = "#dc3545";
+                    }
+                });
+                </script>
             </div>
              <div class="contact-info">
                 <div class="info-item">
@@ -566,12 +597,48 @@
                 كن أول من يعرف آخر المستجدات، المقالات، المشاريع الجديدة، والعروض الحصرية من شبكة إخوة.
             </p>
         </div>
-        <form>
+        <form id="newsletterForm">
+            <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+            <input type="hidden" name="from_site" value="ikhwanetwork.com/newsletter">
+
             <div class="input-row">
-                <input type="text" class="form-control" id="newsletter" placeholder="أدخل بريدك الإلكتروني">
+                <input type="email" class="form-control" name="email" required placeholder="أدخل بريدك الإلكتروني">
             </div>
             <button type="submit" class="newsletter-button">اشترك</button>
+            <p id="newsletterMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
         </form>
+
+        <script>
+        document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const msg = document.getElementById("newsletterMsg");
+            msg.innerText = "جاري الاشتراك...";
+            msg.style.color = "#007bff";
+
+            const formData = new FormData(this);
+
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    msg.innerText = "✅ تم الاشتراك بنجاح!";
+                    msg.style.color = "#28a745";
+                    this.reset();
+                } else {
+                    msg.innerText = "❌ حدث خطأ.";
+                    msg.style.color = "#dc3545";
+                }
+            } catch (error) {
+                msg.innerText = "❌ حدث خطأ في الاتصال.";
+                msg.style.color = "#dc3545";
+            }
+        });
+        </script>
     </div>
 </section>
 <!-- End Newsletter Section -->

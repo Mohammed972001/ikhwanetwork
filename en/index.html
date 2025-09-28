@@ -236,7 +236,7 @@ The company's strategy is based on specific principles, which are reflected in :
                     </div>
                 </div>
                 <div class="strategy-image">
-                    <img data-src="../image/strategy/STR.svg" class="lazyload" alt="Building blueprint and properties">
+                    <img data-src="../image/strategy/STR.png" class="lazyload" alt="Building blueprint and properties">
                 </div>
             </div>
         </div>
@@ -479,60 +479,90 @@ Our expertise makes us industry leaders, and we continue to innovate to give you
 
             <div class="contact-content">
                 <div class="contact-form">
-                    <form>
+                    <form id="contactForm">
+                        <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+                        <input type="hidden" name="from_site" value="ikhwanetwork.com/contact-en">
+
                         <div class="form-row">
                             <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" required placeholder="Name">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" name="email" required placeholder="Email">
                             </div>
                         </div>
+
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" name="phone" placeholder="Phone Number">
                         </div>
-                        <div class="mb-3 file-upload">
-                            <label for="file" class="form-label">File</label>
-                            <div class="file-upload-content">
-                                <label for="file" class="file-upload-label">
-                                    <i class="fa-solid fa-file"></i>
-                                    Please attach a file (max 2MB) in one of these formats: .jpg, .jpeg, .png, .pdf, .xlsx, .docx
-                                </label>
-                                <input class="form-control" type="file" id="file">
-                            </div>
-                        </div>
+
                         <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" rows="3" placeholder="Description"></textarea>
-                        </div>         
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="message" rows="3" placeholder="Description"></textarea>
+                        </div>
+
                         <div class="contact-options">
                             <div class="form-check">
                                 <label class="form-check-label custom-radio" for="radio1">
-                                    <input class="form-check-input" type="radio" id="radio1" name="1">
+                                    <input class="form-check-input" type="radio" id="radio1" name="type" value="Inquiry" checked>
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="radio1">Inquiry</label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label custom-radio" for="radio2">
-                                    <input class="form-check-input" type="radio" id="radio2" name="1">
+                                    <input class="form-check-input" type="radio" id="radio2" name="type" value="Suggestion">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="radio2">Suggestion</label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label custom-radio" for="radio3">
-                                    <input class="form-check-input" type="radio" id="radio3" name="1">
+                                    <input class="form-check-input" type="radio" id="radio3" name="type" value="Complaint">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="radio3">Complaint</label>
                             </div>
                         </div>
+
                         <button type="submit" class="submit-btn">Submit</button>
+                        <p id="resultMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
                     </form>
+
+                    <script>
+                    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+                        e.preventDefault();
+                        const result = document.getElementById("resultMsg");
+                        result.innerText = "Sending...";
+                        result.style.color = "#007bff";
+
+                        const formData = new FormData(this);
+
+                        try {
+                            const res = await fetch("https://api.web3forms.com/submit", {
+                                method: "POST",
+                                body: formData
+                            });
+
+                            const data = await res.json();
+
+                            if (data.success) {
+                                result.innerText = "✅ Message sent successfully!";
+                                result.style.color = "#28a745";
+                                this.reset();
+                            } else {
+                                result.innerText = "❌ Error occurred, please try again.";
+                                result.style.color = "#dc3545";
+                            }
+                        } catch (error) {
+                            result.innerText = "❌ Connection error, please try again.";
+                            result.style.color = "#dc3545";
+                        }
+                    });
+                    </script>
                 </div>
                 <div class="contact-info">
                     <div class="info-item">
@@ -571,12 +601,48 @@ Our expertise makes us industry leaders, and we continue to innovate to give you
                     Be the first to know about our latest news, articles, new projects, and exclusive offers from Ikhwa Network.
                 </p>
             </div>
-            <form>
+            <form id="newsletterForm">
+                <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+                <input type="hidden" name="from_site" value="ikhwanetwork.com/newsletter-en">
+
                 <div class="input-row">
-                    <input type="text" class="form-control" id="newsletter" placeholder="Enter your email">
+                    <input type="email" class="form-control" name="email" required placeholder="Enter your email">
                 </div>
                 <button type="submit" class="newsletter-button">Subscribe</button>
+                <p id="newsletterMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
             </form>
+
+            <script>
+            document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const msg = document.getElementById("newsletterMsg");
+                msg.innerText = "Subscribing...";
+                msg.style.color = "#007bff";
+
+                const formData = new FormData(this);
+
+                try {
+                    const res = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    const data = await res.json();
+
+                    if (data.success) {
+                        msg.innerText = "✅ Successfully subscribed!";
+                        msg.style.color = "#28a745";
+                        this.reset();
+                    } else {
+                        msg.innerText = "❌ Error occurred.";
+                        msg.style.color = "#dc3545";
+                    }
+                } catch (error) {
+                    msg.innerText = "❌ Connection error.";
+                    msg.style.color = "#dc3545";
+                }
+            });
+            </script>
         </div>
     </section>
     <!-- End Newsletter Section -->

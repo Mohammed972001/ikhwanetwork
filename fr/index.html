@@ -380,7 +380,7 @@
           </div>
           <div class="strategy-image">
             <img
-              data-src="../image/strategy/STR.svg"
+              data-src="../image/strategy/STR.png"
               class="lazyload"
               alt="Plan de construction et propriétés"
             />
@@ -720,14 +720,18 @@
 
         <div class="contact-content">
           <div class="contact-form">
-            <form>
+            <form id="contactForm">
+              <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+              <input type="hidden" name="from_site" value="ikhwanetwork.com/contact-fr">
+
               <div class="form-row">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nom</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="name"
+                    name="name"
+                    required
                     placeholder="Nom"
                   />
                 </div>
@@ -736,42 +740,33 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="email"
+                    name="email"
+                    required
                     placeholder="Email"
                   />
                 </div>
               </div>
+
               <div class="mb-3">
-                <label for="phone" class="form-label"
-                  >Numéro de téléphone</label
-                >
+                <label class="form-label">Numéro de téléphone</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="phone"
+                  name="phone"
                   placeholder="Numéro de téléphone"
                 />
               </div>
-              <div class="mb-3 file-upload">
-                <label for="file" class="form-label">Fichier</label>
-                <div class="file-upload-content">
-                  <label for="file" class="file-upload-label">
-                    <i class="fa-solid fa-file"></i>
-                    Veuillez joindre un fichier (max 2MB) dans l'un de ces
-                    formats : .jpg, .jpeg, .png, .pdf, .xlsx, .docx
-                  </label>
-                  <input class="form-control" type="file" id="file" />
-                </div>
-              </div>
+
               <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
+                <label class="form-label">Description</label>
                 <textarea
                   class="form-control"
-                  id="description"
+                  name="message"
                   rows="3"
                   placeholder="Description"
                 ></textarea>
               </div>
+
               <div class="contact-options">
                 <div class="form-check">
                   <label class="form-check-label custom-radio" for="radio1">
@@ -779,7 +774,9 @@
                       class="form-check-input"
                       type="radio"
                       id="radio1"
-                      name="1"
+                      name="type"
+                      value="Demande"
+                      checked
                     />
                     <span class="checkmark"></span>
                   </label>
@@ -791,7 +788,8 @@
                       class="form-check-input"
                       type="radio"
                       id="radio2"
-                      name="1"
+                      name="type"
+                      value="Suggestion"
                     />
                     <span class="checkmark"></span>
                   </label>
@@ -803,15 +801,50 @@
                       class="form-check-input"
                       type="radio"
                       id="radio3"
-                      name="1"
+                      name="type"
+                      value="Réclamation"
                     />
                     <span class="checkmark"></span>
                   </label>
                   <label for="radio3">Réclamation</label>
                 </div>
               </div>
+
               <button type="submit" class="submit-btn">Envoyer</button>
+              <p id="resultMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
             </form>
+
+            <script>
+            document.getElementById("contactForm").addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const result = document.getElementById("resultMsg");
+                result.innerText = "Envoi en cours...";
+                result.style.color = "#007bff";
+
+                const formData = new FormData(this);
+
+                try {
+                    const res = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    const data = await res.json();
+
+                    if (data.success) {
+                        result.innerText = "✅ Message envoyé avec succès!";
+                        result.style.color = "#28a745";
+                        this.reset();
+                    } else {
+                        result.innerText = "❌ Erreur, veuillez réessayer.";
+                        result.style.color = "#dc3545";
+                    }
+                } catch (error) {
+                    result.innerText = "❌ Erreur de connexion, veuillez réessayer.";
+                    result.style.color = "#dc3545";
+                }
+            });
+            </script>
           </div>
           <div class="contact-info">
             <div class="info-item">
@@ -851,17 +884,54 @@
             nouveaux projets et offres exclusives d'Ikhwa Network.
           </p>
         </div>
-        <form>
+        <form id="newsletterForm">
+          <input type="hidden" name="access_key" value="f04b4202-bf5a-4fde-93c1-8444d409de45">
+          <input type="hidden" name="from_site" value="ikhwanetwork.com/newsletter-fr">
+
           <div class="input-row">
             <input
-              type="text"
+              type="email"
               class="form-control"
-              id="newsletter"
+              name="email"
+              required
               placeholder="Entrez votre email"
             />
           </div>
           <button type="submit" class="newsletter-button">S'abonner</button>
+          <p id="newsletterMsg" style="margin-top:10px; color: #28a745; font-weight: 500;"></p>
         </form>
+
+        <script>
+        document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const msg = document.getElementById("newsletterMsg");
+            msg.innerText = "Inscription en cours...";
+            msg.style.color = "#007bff";
+
+            const formData = new FormData(this);
+
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const data = await res.json();
+
+                if (data.success) {
+                    msg.innerText = "✅ Inscription réussie!";
+                    msg.style.color = "#28a745";
+                    this.reset();
+                } else {
+                    msg.innerText = "❌ Erreur survenue.";
+                    msg.style.color = "#dc3545";
+                }
+            } catch (error) {
+                msg.innerText = "❌ Erreur de connexion.";
+                msg.style.color = "#dc3545";
+            }
+        });
+        </script>
       </div>
     </section>
     <!-- Fin Newsletter -->
